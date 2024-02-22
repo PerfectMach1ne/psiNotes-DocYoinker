@@ -6,17 +6,17 @@ from google_auth_oauthlib.flow import InstalledAppFlow
 from googleapiclient.discovery import build
 from googleapiclient.errors import HttpError
 
+from .docs_ids import DOCUMENT_IDS
+
 # If modifying these scopes, delete the file token.json.
 SCOPES = ["https://www.googleapis.com/auth/documents.readonly"]
 
 # The ID of a sample document.
-DOCUMENT_ID = "195j9eDD3ccgjQRttHhJPymLJUCOUjs-jmwTrekvdjFE"
+# DOCUMENT_ID = "195j9eDD3ccgjQRttHhJPymLJUCOUjs-jmwTrekvdjFE"
+
 
 
 def main():
-  """Shows basic usage of the Docs API.
-  Prints the title of a sample document.
-  """
   creds = None
   # The file token.json stores the user's access and refresh tokens, and is
   # created automatically when the authorization flow completes for the first
@@ -36,15 +36,15 @@ def main():
     with open("token.json", "w") as token:
       token.write(creds.to_json())
 
-  try:
-    service = build("docs", "v1", credentials=creds)
+  # try:
+    # service = build("docs", "v1", credentials=creds)
 
     # Retrieve the documents contents from the Docs service.
-    document = service.documents().get(documentId=DOCUMENT_ID).execute()
+    # document = service.documents().get(documentId=DOCUMENT_ID).execute()
 
-    print(f"The title of the document is: {document.get('title')}")
-  except HttpError as err:
-    print(err)
+    # print(f"The title of the document is: {document.get('title')}")
+  # except HttpError as err:
+    # print(err)
 
 
 if __name__ == "__main__":
