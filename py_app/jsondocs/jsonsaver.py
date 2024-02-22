@@ -4,9 +4,19 @@
 ##
 #
 import json
+from os import path
 
 
-def save_ntb(ntb_ids):  
+YOINK_PATH = path.abspath('yoinkstash')
 
-  print(json.dumps(ntb_0.get('body'), indent=' ' * 4))
-  pass
+
+def save_ntb(ntb_obj: object, omega_id: str) -> object:
+  serialized_str = json.dumps(ntb_obj.get('body'), indent=' ' * 4)
+
+  with open(YOINK_PATH + '/jsondoc_' + omega_id + '.json', 'w', encoding='UTF-8') as jsondoc:
+    jsondoc.write(serialized_str)
+  
+  if jsondoc.closed == False:
+    raise Exception('File hasn\'t been closed properly.')
+
+  jsondoc.close()
