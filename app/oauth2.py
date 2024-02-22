@@ -7,6 +7,7 @@ from googleapiclient.discovery import build
 from googleapiclient.errors import HttpError
 
 # If modifying these scopes, delete the file token.json.
+# 
 # Scope meaning: See all your Google Docs documents.
 # https://developers.google.com/docs/api/auth
 SCOPES = ["https://www.googleapis.com/auth/documents.readonly"]
