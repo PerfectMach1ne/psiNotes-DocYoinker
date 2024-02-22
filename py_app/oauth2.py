@@ -1,10 +1,13 @@
+##### oauth2.py #####
+#### Do the Google OAuth2 things so that anything works ####
+###
+##
+#
 import os.path
 
 from google.auth.transport.requests import Request
 from google.oauth2.credentials import Credentials
 from google_auth_oauthlib.flow import InstalledAppFlow
-from googleapiclient.discovery import build
-from googleapiclient.errors import HttpError
 
 # If modifying these scopes, delete the file token.json.
 # 
@@ -34,14 +37,3 @@ def google_docs_auth():
       token.write(creds.to_json())
 
   return creds        
-
-  ######## Google's quickstart.py example of fetching any information from a Google Doc
-  # try:
-    # service = build("docs", "v1", credentials=creds)
-
-    # Retrieve the documents contents from the Docs service.
-    # document = service.documents().get(documentId=DOCUMENT_ID).execute()
-
-    # print(f"The title of the document is: {document.get('title')}")
-  # except HttpError as err:
-    # print(err)
