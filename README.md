@@ -1,7 +1,7 @@
 # psiNotes-DocYoinker
 
 ### The "master plan pipeline"
-- [ ] Put the GDoc Document object's JSON in a `.json`.
+- [x] Put the GDoc Document object's JSON in a `.json`.
 - [ ] Make a stash of functions to handle different parts of it.
 - [ ] First, the hard part - search for all images and their positions (so, `PositionedObject`'s).
 - [ ] Download all of the images to `../yoinkstash/pos_objs/` and put their ID's into `../yoinkstash/pos_objs/rawposobjs.json`
