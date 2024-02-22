@@ -5,6 +5,8 @@
 #
 import os.path
 
+import google.oauth2.credentials
+
 from google.auth.transport.requests import Request
 from google.oauth2.credentials import Credentials
 from google_auth_oauthlib.flow import InstalledAppFlow
@@ -16,7 +18,7 @@ from google_auth_oauthlib.flow import InstalledAppFlow
 SCOPES = ["https://www.googleapis.com/auth/documents.readonly"]
 
 
-def google_docs_auth():
+def google_docs_auth() -> google.oauth2.credentials.Credentials | google.auth.external_account_authorized_user.Credentials:
   creds = None
   # The file token.json stores the user's access and refresh tokens, and is
   # created automatically when the authorization flow completes for the first
@@ -36,4 +38,5 @@ def google_docs_auth():
     with open("token.json", "w") as token:
       token.write(creds.to_json())
 
+  # print(type(creds))
   return creds        

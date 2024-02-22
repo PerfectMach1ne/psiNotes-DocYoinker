@@ -3,5 +3,10 @@
 ###
 ##
 #
-def save_ntb():
+import json
+
+
+def save_ntb(ntb_ids):  
+
+  print(json.dumps(ntb_0.get('body'), indent=' ' * 4))
   pass

@@ -14,13 +14,13 @@ import jsondocs.jsonsaver as jdsave
 import jsondocs.jsonloader as jdload
 
 
-def get_all_ntb_ids():
+def get_all_ntb_ids() -> dict[str, str]:
   existing_ntb_ids = {omega_id: gdoc_id for omega_id, gdoc_id in docs_ids.DOCUMENT_IDS.items() if gdoc_id != ""}
 
   return existing_ntb_ids
 
 
-def get_ntb(creds, omega_id):
+def get_ntb(creds, omega_id: str) -> object:
   DOCUMENT_ID = docs_ids.DOCUMENT_IDS[omega_id]
   document = None
 
@@ -42,6 +42,8 @@ def main():
   notebooks = get_all_ntb_ids()
   omega_ids = list(notebooks.keys())
   ntb_0 = get_ntb(creds, omega_ids[omega_ids.index("0")])
+
+  # jdsave.save_ntb(ntb_0)
 
   # print(f"The title of the document is: {ntb_0.get('title')}")
   print(json.dumps(ntb_0.get('body'), indent=' ' * 4))
