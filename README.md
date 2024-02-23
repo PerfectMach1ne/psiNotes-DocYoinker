@@ -11,6 +11,7 @@
 - - [ ] Develop some system to identify your headers and etc (initially only for Notebook Zero).
 - - [ ] Implement an separate general header segmenting system for non-Notebook-Zero notebooks.
 - - - [ ] Split `rawtext.json` into `segtext.json` (segmented text).
+- [ ] Make the app into a CLI to control what it is supposed to do any given time.
 - **<❗>** Everything stores its position!
 - [ ] The first hellish attempt at trying to convert everything to XML ~~or even HTML~~...
 - - **<❗>** ....but maybe converting the JSON data into a very decent XML format i can engineer is a better idea?

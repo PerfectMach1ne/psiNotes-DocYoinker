@@ -4,6 +4,8 @@
 ##
 #
 
+import json
+
 import oauth2 
 import gdocs
 import jsondocs.jsonsaver as jdsave
@@ -20,6 +22,7 @@ def main():
   ntb_0 = gdocs.get_ntb(creds, ntb_0_omega_id)
 
   jdsave.save_ntb(ntb_0, ntb_0_omega_id)
+  print(json.dumps(jdload.load_jsondoc(ntb_0_omega_id), indent=' ' * 4))
 
   # print(f"The title of the document is: {ntb_0.get('title')}")
   # print(json.dumps(ntb_0.get('body'), indent=' ' * 4))

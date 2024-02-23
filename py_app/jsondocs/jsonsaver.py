@@ -10,6 +10,7 @@ from os import path
 YOINK_PATH = path.abspath('yoinkstash')
 
 
+# Takes in a notebook Document object & its omega_id, and saves it into a properly named "JSONdoc" file.
 def save_ntb(ntb_obj: object, omega_id: str) -> object:
   serialized_str = json.dumps(ntb_obj.get('body'), indent=' ' * 4)
 
@@ -18,5 +19,5 @@ def save_ntb(ntb_obj: object, omega_id: str) -> object:
   
   if jsondoc.closed == False:
     raise Exception('File hasn\'t been closed properly.')
-
+  
   jsondoc.close()
