@@ -5,3 +5,4 @@
 #
 import json
 
+import jsonloader as jdload
