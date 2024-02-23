@@ -15,3 +15,5 @@
 - **<❗>** Everything stores its position!
 - [ ] The first hellish attempt at trying to convert everything to XML ~~or even HTML~~...
 - - **<❗>** ....but maybe converting the JSON data into a very decent XML format i can engineer is a better idea?
+### 1-image project explanation
+![A meme](me_irl.png)
