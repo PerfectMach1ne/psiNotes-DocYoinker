@@ -20,14 +20,16 @@ def main():
   omega_ids = list(notebook_ids.keys())
 
   parser = argparse.ArgumentParser(
-    prog='DocYoinker',
+    prog='./DocYoinker',
     description="Python interface for fetching omega Notes Google Docs \
      and converting them to HTML+CSS formatted psi Notes format.",
     epilog='Copytop Luka Vivi Starr Alice 02.2024-09.2024'
   )
-  parser.add_argument('-f', '--fetch', choices=omega_ids,
+  get_args_desc = parser.add_argument_group('GET requests', 'Fetches a Google Doc from Google Doc API in JSON doc format.')
+  get_args = get_args_desc.add_mutually_exclusive_group()
+  get_args.add_argument('-f', '--fetch', choices=omega_ids,
     help='Fetch and print a Google Doc\'s content (as JSON doc). WARNING: Some JSON docs are incredibly long!')
-  parser.add_argument('-s', '--save', choices=omega_ids,
+  get_args.add_argument('-s', '--save', choices=omega_ids,
     help='Fetch and save a Google Doc to the yoinkstash directory.')
   parser.add_argument('-v', '--verbose', action='store_true',
     help='Toggle verbose mode (on by default).')
