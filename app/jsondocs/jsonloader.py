@@ -25,7 +25,7 @@ def load_jsondoc(omega_id: str) -> list:
 
   jsondoc.close()
 
-  content = read_jsondoc["content"]
+  json_content = read_jsondoc.get('tabs')[0].get('documentTab').get('body').get('content')
   print("> Objects contained in the unpacked Notebook: " + str(len(content)))
 
-  return content
+  return json_content

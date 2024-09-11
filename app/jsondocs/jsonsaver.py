@@ -17,7 +17,8 @@ YOINK_PATH = path.abspath('../yoinkstash')
 def save_ntb(ntb_obj: object, omega_id: str) -> object:
   if not args.shut_up:
     print(f"> Serializing JSON object for Ntb {omega_id}...")
-  serialized_str = json.dumps(ntb_obj.get('body'), indent=' ' * 4)
+  json_content = ntb_obj.get('tabs')[0].get('documentTab').get('body').get('content')
+  serialized_str = json.dumps(json_content, indent=' ' * 4)
 
   if not args.shut_up:
     print(f"> Saving file /yoinkstash/jsondoc_{omega_id}.json ...")

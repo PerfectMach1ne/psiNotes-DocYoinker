@@ -22,7 +22,7 @@ def get_ntb(creds, omega_id: str) -> object:
     service = build("docs", "v1", credentials=creds)
 
     # Retrieve the documents contents from the Docs service.
-    document = service.documents().get(documentId=DOCUMENT_ID).execute()
+    document = service.documents().get(documentId=DOCUMENT_ID, includeTabsContent=True).execute()
   except HttpError as err:
     if not args.shut_up:
       print("> Google Doc retrieval failed (HttpError)!")

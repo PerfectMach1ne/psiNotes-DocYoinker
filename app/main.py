@@ -27,8 +27,11 @@ def main():
     for fetched_doc in args.fetch:
       doc_id = docs_ids.OMEGA_IDS[docs_ids.OMEGA_IDS.index(fetched_doc)]
       doc = gdocs.get_ntb(creds, doc_id)
+      if not args.shut_up:
+        print(f"> Serializing JSON object for Ntb {doc_id}...")
       print(f"> Fetched JSON doc title: {doc.get('title')}")
-      print(json.dumps(jdload.load_jsondoc(doc_id), indent=' ' * 4))
+      json_content = doc.get('tabs')[0].get('documentTab').get('body').get('content')
+      print(json.dumps(json_content, indent=4))
 
   elif args.save != None:
     doc_id = None
