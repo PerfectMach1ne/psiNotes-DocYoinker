@@ -21,9 +21,10 @@ DOCUMENT_IDS = {
 }
 
 def get_all_ntb_ids() -> dict[str, str]:
-  existing_ntb_ids = {omega_id: gdoc_id for omega_id, gdoc_id in DOCUMENT_IDS.items() if gdoc_id != ""}
+    existing_ntb_ids = {omega_id: gdoc_id for omega_id, gdoc_id
+                       in DOCUMENT_IDS.items() if gdoc_id != ""}
 
-  return existing_ntb_ids
+    return existing_ntb_ids
 
 
 NOTEBOOK_IDS = get_all_ntb_ids()
