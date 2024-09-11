@@ -7,7 +7,7 @@ import json
 from os import path
 
 
-YOINK_PATH = path.abspath('yoinkstash')
+YOINK_PATH = path.abspath('../yoinkstash')
 
 
 # Takes in a notebook Document object & its omega_id, and saves it into a properly named "JSONdoc" file.

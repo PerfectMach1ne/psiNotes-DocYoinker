@@ -4,6 +4,7 @@
 ##
 #
 
+import argparse
 import json
 
 import oauth2 
@@ -15,18 +16,34 @@ import jsondocs.jsonloader as jdload
 def main():
   creds = oauth2.google_docs_auth()
 
-  # Is this a bit unnecessary...? Yeah!
-  notebooks = gdocs.get_all_ntb_ids() # Only contains the dict with IDs, not actual Document objects
-  omega_ids = list(notebooks.keys())
-  ntb_0_omega_id = omega_ids[omega_ids.index("0")]
-  ntb_0 = gdocs.get_ntb(creds, ntb_0_omega_id)
+  notebook_ids = gdocs.get_all_ntb_ids()
+  omega_ids = list(notebook_ids.keys())
 
-  jdsave.save_ntb(ntb_0, ntb_0_omega_id)
-  print(json.dumps(jdload.load_jsondoc(ntb_0_omega_id), indent=' ' * 4))
+  parser = argparse.ArgumentParser(
+    prog='DocYoinker',
+    description="Python interface for fetching omega Notes Google Docs \
+     and converting them to HTML+CSS formatted psi Notes format.",
+    epilog='Copytop Luka Vivi Starr Alice 02.2024-09.2024'
+  )
+  parser.add_argument('-f', '--fetch', choices=omega_ids,
+    help='Fetch and print a Google Doc\'s content (as JSON doc). WARNING: Some JSON docs are incredibly long!')
+  parser.add_argument('-s', '--save', choices=omega_ids,
+    help='Fetch and save a Google Doc to the yoinkstash directory.')
+  parser.add_argument('-v', '--verbose', action='store_true',
+    help='Toggle verbose mode (on by default).')
 
-  # print(f"The title of the document is: {ntb_0.get('title')}")
-  # print(json.dumps(ntb_0.get('body'), indent=' ' * 4))
+  args = parser.parse_args()
 
+  if args.fetch != None:
+    doc_id = omega_ids[omega_ids.index(args.fetch)]
+    doc = gdocs.get_ntb(creds, doc_id)
+    print(f"The title of the fetched document is: {doc.get('title')}")
+    print(json.dumps(jdload.load_jsondoc(doc_id), indent=' ' * 4))
+  elif args.save != None:
+    doc_id = omega_ids[omega_ids.index(args.save)]
+    doc = gdocs.get_ntb(creds, doc_id)
+    print(f"The title of the fetched document is: {doc.get('title')}")
+    jdsave.save_ntb(doc, doc_id)
 
 if __name__ == "__main__":
   main()

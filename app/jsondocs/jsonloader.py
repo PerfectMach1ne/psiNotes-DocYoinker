@@ -7,7 +7,7 @@ import json
 from os import path
 
 
-YOINK_PATH = path.abspath('yoinkstash')
+YOINK_PATH = path.abspath('../yoinkstash')
 
 
 # Loads the whole JSONdoc into memory and returns it
