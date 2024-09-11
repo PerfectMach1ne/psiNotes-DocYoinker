@@ -42,6 +42,46 @@ def main():
       print(f"> Fetched JSON doc title: {doc.get('title')}")
       jdsave.save_ntb(doc, doc_id)
 
+  if args.test:
+    print("> Running testing code! Good luck!!!")
+    doc_id = docs_ids.OMEGA_IDS[docs_ids.OMEGA_IDS.index('0')]
+    doc = gdocs.get_ntb(creds, doc_id)
+
+    if not args.shut_up:
+      print(f"> Fetched JSON doc title: {doc.get('title')}")
+
+    pos_objs = doc.get('tabs')[0].get('documentTab').get('positionedObjects')
+    
+    # Find the Paragraphs with positionedObjectIds property.
+    paragraph_list = jdload.load_jsondoc(doc_id)
+    "Find positioned"
+    pos_objs_pars = list()
+    for par in zip(range(len(paragraph_list)), paragraph_list):
+      pos_obj_id = par[1].get('paragraph')
+      if pos_obj_id != None :
+        if 'positionedObjectIds' in pos_obj_id.keys():
+          pos_objs_pars.append(pos_obj_id)
+
+    if not args.shut_up:
+      print(f"> PositionedObject paragraphs in NtB {doc_id}: {len(pos_objs_pars)}")
+      print("> PositionedObject IDs: ")
+      for obj in pos_objs_pars:
+        print(json.dumps(obj.get('positionedObjectIds')[0], indent=4))
+
+    img_uris = list()
+    for obj in pos_objs_pars:
+      img_uris.append(pos_objs.get(obj.get('positionedObjectIds')[0])
+        .get('positionedObjectProperties')
+        .get('embeddedObject')
+        .get('imageProperties')
+        .get('contentUri'))
+
+    if not args.shut_up:
+      print("> PositionedObject image URIs:")
+      for zt in zip(img_uris, pos_objs_pars):
+        print("\"" + zt[1].get('positionedObjectIds')[0] + "\": " + zt[0])
+    
+
 
 if __name__ == "__main__":
   main()
