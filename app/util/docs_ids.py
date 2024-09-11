@@ -19,3 +19,12 @@ DOCUMENT_IDS = {
   "B2": "",
   "CS": "1bJfCXJYjRITR9V7hJwZ2iaY7Leld8PIdRR4h51N8nCU",
 }
+
+def get_all_ntb_ids() -> dict[str, str]:
+  existing_ntb_ids = {omega_id: gdoc_id for omega_id, gdoc_id in DOCUMENT_IDS.items() if gdoc_id != ""}
+
+  return existing_ntb_ids
+
+
+NOTEBOOK_IDS = get_all_ntb_ids()
+OMEGA_IDS = list(NOTEBOOK_IDS.keys())
