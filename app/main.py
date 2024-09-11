@@ -5,6 +5,7 @@
 #
 
 import json
+import requests as req
 
 import gdocs
 import oauth2 
@@ -80,6 +81,11 @@ def main():
       print("> PositionedObject image URIs:")
       for zt in zip(img_uris, pos_objs_pars):
         print("\"" + zt[1].get('positionedObjectIds')[0] + "\": " + zt[0])
+    
+    for img_uri in img_uris:
+      url = img_uri
+      res = req.get(url)
+      print(res.headers['content-type'])
     
 
 
