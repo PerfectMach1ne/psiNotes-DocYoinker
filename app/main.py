@@ -19,6 +19,10 @@ import getjdocs.posobj as get_po
 
 def main():
     creds = oauth2.google_docs_auth()
+
+    if args.shutup:
+        print("[SkillIssueException] Dumb user tried to shut me up with --shutup, doesn't realize it's --shut-up that does the trick!")
+        exit(1)
   
     if not args.shut_up:
         print(f"> args object elements: {vars(args)}")
@@ -43,9 +47,17 @@ def main():
             doc = gdocs.get_ntb(creds, doc_id)
             print(f"> Fetched JSON doc title: {doc.get('title')}")
             jdsave.save_ntb(doc, doc_id)
+    elif args.posobj != None:
+        doc_id = None
+        doc = None
+        for fetched_doc in args.posobj:
+            doc_id = docs_ids.OMEGA_IDS[docs_ids.OMEGA_IDS.index(fetched_doc)]
+            doc = gdocs.get_ntb(creds, doc_id)
+            doc_posobjs = get_po.get_posobjs(creds, doc_id)
+            get_po.save_posobjs(doc_posobjs)
 
     if args.test:
-        very_special_posobj_dict = get_po.get_posobjs(creds, '0')
+        pass
 
 
 if __name__ == "__main__":

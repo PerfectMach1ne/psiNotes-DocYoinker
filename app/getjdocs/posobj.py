@@ -1,5 +1,8 @@
 import json
 import requests as req
+from io import BytesIO
+from os import path
+from PIL import Image
 
 import gdocs
 import util.jsonloader as jdload
@@ -10,6 +13,10 @@ import util.jsonloader as jdload
 
 
 type PosObj = list[dict[dict[list, str, str]]]
+
+
+YOINK_PATH = path.abspath('../yoinkstash')
+
 
 def get_posobjs(creds, omega_id: str) -> PosObj:
     doc_id = docs_ids.OMEGA_IDS[docs_ids.OMEGA_IDS.index(omega_id)]
@@ -69,19 +76,51 @@ def get_posobjs(creds, omega_id: str) -> PosObj:
     return return_posobjs
 
 
+def image_to_bytearr(image: Image) -> bytes:
+    image_byte_array = BytesIO()
+    image.save(image_byte_array, format=image.format)
+    image_byte_array = image_byte_array.getvalue()
+    return image_byte_array
+
+
 def download_posobjs(posobj: PosObj):
-    pass
+    res_tuples = list()
+
+    for po_list in posobj:
+        for po_key in po_list:
+            uri = po_list[po_key]['uri'] 
+            res = req.get(uri)
+            mime_type = po_list[po_key]['mime_type'] 
+            img = Image.open(BytesIO(res.content))
+            content = image_to_bytearr(img)
+            res_tuples.append(tuple(
+                (po_key, content, mime_type)
+                ))
+            
+    return res_tuples    
 
 
 def save_posobjs(posobj: PosObj):
     # Rough draft of the function so far:
-    download_posobjs()
+    tuples = download_posobjs(posobj)
+    for tup in tuples:
+        posobjkey = tup[0]
+        img_bytes = tup[1]
+        mime_type = tup[2]
 
-    with open(YOINK_PATH + '/pos_objs/' + '', 'wb') as local_img:
-        pass
+        file_type = None
+        match mime_type:
+            case "image/jpeg":
+                file_type = ".jpg"
+            case "image/png":
+                file_type = ".png"
     
-    if local_img.closed == False:
-        raise Exception('File hasn\'t been closed properly.')
+        if not args.shut_up:
+            print("> Saving file: " + YOINK_PATH + '/pos_objs/' + posobjkey + file_type + " ...")
+        with open(YOINK_PATH + '/pos_objs/' + posobjkey + file_type, 'wb') as local_img:
+            print(type(img_bytes))
+            local_img.write(img_bytes)
+        if local_img.closed == False:
+            raise Exception('File hasn\'t been closed properly.')
 
-    local_img.close()
-    pass
+        local_img.close()
