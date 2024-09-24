@@ -1,5 +1,15 @@
 # psiNotes-DocYoinker
 
+## How to use
+
+### Prerequisites
+
+- Access to my Google Account (good luck).
+- Up to date Google API credentials and token (credentials.json in ./app/ or a safer place).
+- A virtual environment /w requirements installed:
+#### `python -m venv .venv`
+#### `pip install -r requirements.txt`
+
 ### The "master plan pipeline"
 - [x] ~~Put the GDoc Document object's JSON in a `.json`.~~ 
 - [ ] Option to check what docs are downloaded to not waste bandwith. (and also compare revisionId to see if there were any changes.)
