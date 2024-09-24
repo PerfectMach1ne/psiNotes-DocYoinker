@@ -10,7 +10,7 @@
 #### `python -m venv .venv`
 #### `pip install -r requirements.txt`
 
-### The "master plan pipeline"
+## The "master plan pipeline"
 - [x] ~~Put the GDoc Document object's JSON in a `.json`.~~ 
 - [ ] Option to check what docs are downloaded to not waste bandwith. (and also compare revisionId to see if there were any changes.)
 - [ ] Save doc metadata somewhere.
