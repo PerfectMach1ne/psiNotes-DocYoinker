@@ -114,6 +114,20 @@ def save_posobjs(posobj: PosObj):
                 file_type = ".jpg"
             case "image/png":
                 file_type = ".png"
+            case "image/webp":
+                file_type = ".webp"
+            case "image/apng":
+                file_type = ".apng"
+            case "image/avif":
+                file_type = ".avif"
+            case "image/bmp":
+                file_type = ".bmp"
+            case "image/gif":
+                file_type = ".gif"
+            case "image/svg+xml":
+                file_type = ".svg"
+            case "image/tiff":
+                file_type = ".tiff"
     
         if not args.shut_up:
             print("> Saving file: " + YOINK_PATH + '/pos_objs/' + posobjkey + file_type + " ...")
