@@ -70,7 +70,7 @@ def get_posobjs(creds, omega_id: str) -> PosObj:
             local_obj = return_posobjs[stupid_counter][posobj_id] = return_posobjs[stupid_counter].pop('placeholder')
             local_obj['uri'] = url
             local_obj['mime_type'] = content_type
-            stupid_counter = stupid_counter + 1
+            stupid_counter += 1
 
     
     return return_posobjs
