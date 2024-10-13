@@ -1,0 +1,26 @@
+[metadata]
+id = "M1"
+title = "Mathematics I"
+subtitle = "(Notebook M1)"
+
+[ch-0]
+name = "An obligatory, superficially sentimental preface that you can skip reading"
+color = 0xff0000
+text = [ "", "" ]
+
+[[ch-1]]
+name = "Arithmetic"
+color = 0x93c47d
+
+[ch-1.intro]
+text = [ "", "" ]
+req-preqs = [ 
+	"Familiarity with numbers and basic, elementary school level math",
+	"Familiarity with basics of basic algebra (I recommend “parkouring” to the first few chapters of chapter 5.)",
+	"Encountering exponentiation at least once in your life",
+	"Patience to sit through the absolute fundamentals (and my bullshitting) (very essential)",
+]
+
+[[ch-1.sch-1-1]]
+name = "Numbers, digits and the decimal system"
+text = [ "", "" ]
