@@ -1,5 +1,21 @@
 # psiNotes-DocYoinker
 
+## omega Notes/psi Notes link
+
+#### [Table of Contents](https://docs.google.com/spreadsheets/d/15nSuKrllBI4PdawNSxqVGMqnc-CjYMN8A3c6kASYd9Y/edit#gid=0)
+#### [Notebook Zero](https://docs.google.com/document/u/0/d/1fz6j5w-gRXjCB6A2YbGQ8nM6YWFTutaRBLvcFss0ZpI/edit)
+#### [Notebook M1 - Mathematics I](https://docs.google.com/document/u/0/d/1fz6j5w-gRXjCB6A2YbGQ8nM6YWFTutaRBLvcFss0ZpI/edit)
+#### [Notebook M2 - Mathematics II](https://docs.google.com/document/d/1atUiihcPNvC6ZJ6zaNojDx4xlyAYLdFpMfhGF_0AS8A/edit)
+#### [Notebook M3 - Mathematics III](https://docs.google.com/document/d/1B3wYPnc0o-pXTQ9-VUc_LiJ6paK7evIwy9SeTKGXFDc/edit)
+#### [Notebook P1 - Physics I](https://docs.google.com/document/d/1Rd4AC_L55x6gUJv-PJml873m1Dfjos9FKvycyKInA8U/edit)
+#### [Notebook P2 - Physics II](https://docs.google.com/document/d/1RSSwYydFolNc4p4JK-naT1SZMQHPtWL2R5GO0KgQIp0/edit)
+#### [Notebook C1 - Chemistry I](https://docs.google.com/document/d/1X2yIsOxmf8Ic6RYuAG5ZV9Ru9OOH3aloRcAKSjDRkGM/edit)
+#### [Notebook C2 - Chemistry II](https://docs.google.com/document/d/1fLyzY6NaSRK1DbRcdNZOQK3fufGBCBDGdtRs6qczpfw/edit)
+#### [Notebook EE1 - Electrical Engineering I](https://docs.google.com/document/d/1ystzIw9OHbofu2B4iGF6gWu2fW9T4bQYbCz05yY1KxY/edit)
+#### [Notebook A&M - Astronomy & Meteorology](https://docs.google.com/document/d/1xvy_JRqsYY-qSEcwylL_5nBubLNtkDJb5otq_C_03hY/edit)
+#### [Notebook B1 - Biology I](https://docs.google.com/document/d/1zWZL0GyYb_uM2vJaP384nmyajioygD1viWTZuCSl5sU/edit)
+#### [Notebook CS](https://docs.google.com/document/d/1bJfCXJYjRITR9V7hJwZ2iaY7Leld8PIdRR4h51N8nCU/edit)
+
 ## How to use
 
 ### Prerequisites
