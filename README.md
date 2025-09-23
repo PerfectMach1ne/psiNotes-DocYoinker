@@ -32,7 +32,7 @@
 - [ ] Save doc metadata somewhere.
 - [ ] Make a stash of functions to handle different parts of it.
 - [x] ~~First, the hard part - search for all images and their positions (so, `PositionedObject`'s).~~ "hard part" lol
-- [ ] Download all of the images to `../yoinkstash/pos_objs/` and put their ID's into `../yoinkstash/pos_objs/rawposobjs.json`
+- [ ] Download all of the images `../yoinkstash/pos_objs/` and put their ID's into `../yoinkstash/pos_objs/rawposobjs.json`
 - [ ] Then grab all the text and tables.
 - - [ ] Find and put tables in a `../yoinkstash/tables/tables.json`
 - [ ] The rest goes to `../yoinkstash/text/rawtext.json`

@@ -23,7 +23,7 @@ def main():
     if args.shutup:
         print("[SkillIssueException] Dumb user tried to shut me up with --shutup, doesn't realize it's --shut-up that does the trick!")
         exit(1)
-  
+
     if not args.shut_up:
         print(f"> args object elements: {vars(args)}")
 
