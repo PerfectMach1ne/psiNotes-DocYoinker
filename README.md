@@ -26,6 +26,8 @@
 #### `python -m venv .venv`
 #### `pip install -r requirements.txt`
 
+Note: if something doesn't work, try moving stuff around, running commands from ./app/DocYoinker manually, or just activate the virtual environment manually and go ham & salami.
+
 ## The "master plan pipeline"
 - [x] ~~Put the GDoc Document object's JSON in a `.json`.~~ 
 - [ ] Option to check what docs are downloaded to not waste bandwith. (and also compare revisionId to see if there were any changes.)

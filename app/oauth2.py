@@ -13,7 +13,7 @@ from google_auth_oauthlib.flow import InstalledAppFlow
 
 # If modifying these scopes, delete the file token.json.
 # 
-# Scope meaning: See all your Google Docs documents.
+# Current scope: See all your Google Docs documents.
 # https://developers.google.com/docs/api/auth
 SCOPES = ["https://www.googleapis.com/auth/documents.readonly"]
 
