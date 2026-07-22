@@ -18,7 +18,7 @@ def get_ntb(creds, omega_id: str) -> object:
     try:
         if not args.shut_up:
             print("> Retrieving Google Doc...")
-            print(f"\-> GET https://docs.googleapis.com/v1/documents/{docs_ids.DOCUMENT_IDS[omega_id]}")
+            print(f"\\-> GET https://docs.googleapis.com/v1/documents/{docs_ids.DOCUMENT_IDS[omega_id]}")
         service = build("docs", "v1", credentials=creds)
 
         # Retrieve the documents contents from the Docs service.
@@ -26,7 +26,7 @@ def get_ntb(creds, omega_id: str) -> object:
     except HttpError as err:
         if not args.shut_up:
             print("> Google Doc retrieval failed (HttpError)!")
-            print(f"\-> {err}")
+            print(f"\\-> {err}")
         else:
             print(err)
 

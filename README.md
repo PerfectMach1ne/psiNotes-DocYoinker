@@ -24,9 +24,11 @@
 - Up to date Google API credentials and token (credentials.json in ./app/ or a safer place).
 - A virtual environment /w requirements installed:
 #### `python -m venv .venv`
+#### `. .venv/bin/activate`
 #### `pip install -r requirements.txt`
 
 Note: if something doesn't work, try moving stuff around, running commands from ./app/DocYoinker manually, or just activate the virtual environment manually and go ham & salami.
+Note 2: Remember to source your venv before trying to install shit from the terminal. It's a cheap and easy trip-up.
 
 ## The "master plan pipeline"
 - [x] ~~Put the GDoc Document object's JSON in a `.json`.~~ 

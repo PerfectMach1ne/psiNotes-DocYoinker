@@ -54,7 +54,8 @@ def get_posobjs(creds, omega_id: str) -> PosObj:
             .get('embeddedObject')
             .get('imageProperties')
             .get('contentUri'))
-      
+
+
     if not args.shut_up:
         print("> PositionedObject image URIs:")
         stupid_counter = 0

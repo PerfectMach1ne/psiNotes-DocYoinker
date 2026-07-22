@@ -24,5 +24,4 @@ parser.add_argument('--test', action='store_true',
     help='Unused argument for testing features in development.')
 
 
-
 args = parser.parse_args()
