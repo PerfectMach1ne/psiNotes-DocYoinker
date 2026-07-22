@@ -31,6 +31,7 @@ Note: if something doesn't work, try moving stuff around, running commands from 
 Note 2: Remember to source your venv before trying to install shit from the terminal. It's a cheap and easy trip-up.
 
 ## The "master plan pipeline"
+### Original project scope
 - [x] ~~Put the GDoc Document object's JSON in a `.json`.~~ 
 - [ ] Option to check what docs are downloaded to not waste bandwith. (and also compare revisionId to see if there were any changes.)
 - [ ] Save doc metadata somewhere.
@@ -47,5 +48,12 @@ Note 2: Remember to source your venv before trying to install shit from the term
 - **<❗>** Everything stores its position!
 - [ ] The first hellish attempt at trying to convert everything to XML ~~or even HTML~~...
 - - **<❗>** ....but maybe converting the JSON data into a very decent XML format i can engineer is a better idea?
+### (psi+chi) Notes era
+- [ ] Connect with Table of Contents; separate implementation!
+- [ ] Fetch and load ToC data.
+- [ ] Plug in chi Notes Bash scripts.
+- [ ] Put chi Notes page numbers statistics into ToC.
+- [ ] (**❗ONLY** when some initial GDoc export feat is done!!!) insert/"weave" omega Notes chapters/subchapters into chi Notes
+- - [ ] And then into psi Notes!
 ### 1-image project explanation
 ![A meme](me_irl.png)
