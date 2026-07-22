@@ -55,5 +55,6 @@ Note 2: Remember to source your venv before trying to install shit from the term
 - [ ] Put chi Notes page numbers statistics into ToC.
 - [ ] (**❗ONLY** when some initial GDoc export feat is done!!!) insert/"weave" omega Notes chapters/subchapters into chi Notes
 - - [ ] And then into psi Notes!
+- [ ] Have a core template for testing (ala `main.tex`) and a Bash script that updates everything (mayhaps /w sed-diff-pipe tricks??) when something new is added to the doc format!
 ### 1-image project explanation
 ![A meme](me_irl.png)
