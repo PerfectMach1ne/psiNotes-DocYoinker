@@ -7,6 +7,8 @@
 import json
 import requests as req
 
+from googleapiclient.discovery import build
+
 import gdocs
 import oauth2 
 import parser
@@ -64,7 +66,28 @@ def main():
     # Table of Contents & psi/chi Notes features
     #
     if args.toc :
-        sheet = toc.get_toc(creds)
+        file = toc.get_toc(creds)
+        sheets_service = build('sheets', 'v4', credentials=creds)
+
+        # Slop code to just test if it works:
+        spreadsheet_info = sheets_service.spreadsheets().get(
+            spreadsheetId=toc.TOC_ID
+        ).execute()
+        sheet_title = spreadsheet_info['sheets'][2]['properties']['title']
+
+        result = sheets_service.spreadsheets().values().get(
+            spreadsheetId=toc.TOC_ID,
+            range=sheet_title
+        ).execute()
+
+        values = result.get('values', [])
+
+        found = False
+        for row_id, row in enumerate(values):
+            for col_id, cell in enumerate(row):
+                if cell == "4.1.2.Empty set":
+                    print(f"woo woo woo '{sheet_title}' bwoo bwoo {row_id + 1}:{col_id + 1} found me a {cell}")
+                    found = True
 
 
     if args.test:

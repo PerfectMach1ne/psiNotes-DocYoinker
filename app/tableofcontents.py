@@ -19,7 +19,7 @@ def get_toc(creds) -> object:
     try:
         if not args.shut_up:
             print("> Retrieving Table of Contents...")
-            print(f"\\-> GET https://docs.googleapis.com/v1/documents/")
+            print(f"\\-> GET https://docs.googleapis.com/v3/drive.file/")
         service = build("drive", "v3", credentials=creds)
 
         # Retrieve the Table of Contents sheet from the Drive service.
