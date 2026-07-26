@@ -15,7 +15,11 @@ from google_auth_oauthlib.flow import InstalledAppFlow
 # 
 # Current scope: See all your Google Docs documents.
 # https://developers.google.com/docs/api/auth
-SCOPES = ["https://www.googleapis.com/auth/documents.readonly"]
+SCOPES = [
+    "https://www.googleapis.com/auth/documents.readonly",
+    "https://www.googleapis.com/auth/drive.file",
+    "https://www.googleapis.com/auth/drive.metadata.readonly"
+]
 
 
 def google_docs_auth() -> google.oauth2.credentials.Credentials | google.auth.external_account_authorized_user.Credentials:

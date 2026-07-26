@@ -10,6 +10,7 @@ import requests as req
 import gdocs
 import oauth2 
 import parser
+import tableofcontents as toc
 from parser import args
 import util.docs_ids as docs_ids
 import util.jsonsaver as jdsave
@@ -27,6 +28,9 @@ def main():
     if not args.shut_up:
         print(f"> args object elements: {vars(args)}")
 
+    #
+    # Docs exclusive features
+    #
     if args.fetch != None:
         doc_id = None
         doc = None
@@ -55,6 +59,13 @@ def main():
             doc = gdocs.get_ntb(creds, doc_id)
             doc_posobjs = get_po.get_posobjs(creds, doc_id)
             get_po.save_posobjs(doc_posobjs)
+
+    #
+    # Table of Contents & psi/chi Notes features
+    #
+    if args.toc :
+        sheet = toc.get_toc(creds)
+
 
     if args.test:
         pass

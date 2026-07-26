@@ -19,7 +19,7 @@ def load_jsondoc(omega_id: str) -> list:
         print(f"> Opening file /yoinkstash/jsondoc_{omega_id}.json ...")
     with open(YOINK_PATH + '/jsondoc_' + omega_id + '.json', 'r', encoding='UTF-8') as jsondoc:
         read_jsondoc = json.load(jsondoc)
-  
+
     if jsondoc.closed == False:
         raise Exception('File hasn\'t been closed properly.')
 

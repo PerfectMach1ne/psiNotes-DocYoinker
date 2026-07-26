@@ -24,8 +24,8 @@ def save_ntb(ntb_obj: object, omega_id: str) -> object:
         print(f"> Saving file /yoinkstash/jsondoc_{omega_id}.json ...")
     with open(YOINK_PATH + '/jsondoc_' + omega_id + '.json', 'w', encoding='UTF-8') as jsondoc:
         jsondoc.write(serialized_str)
-  
+
     if jsondoc.closed == False:
         raise Exception('File hasn\'t been closed properly.')
-  
+
     jsondoc.close()
