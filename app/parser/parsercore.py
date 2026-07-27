@@ -10,6 +10,11 @@ from parser.dualpoolaction import DualPoolAction
 import util.docs_ids as docs_ids
 
 
+GREEN = "\033[32m" # ourple on my machine
+RED = "\033[33m" # also red on my machin
+RESET = "\033[0m"
+
+
 parser = argparse.ArgumentParser(
 	prog='./app/DocYoinker',
 	description="Python interface for fetching omega Notes Google Docs \
@@ -26,11 +31,15 @@ get_args.add_argument('-s', '--save', choices=docs_ids.OMEGA_IDS, nargs='+',
 get_args.add_argument('-p', '--posobj', choices=docs_ids.OMEGA_IDS, nargs='+',
 	help='Fetch PositionedObjects from a Google Doc and save them to the yoinkstash directory in correct format.')
 
+# subcommands = parser.add_subparsers(title='Subcommands')
+
 toc_subcom = parser.add_subparsers(
-	title='Table of Contents subcommands',
-	description="View and edit the Table of Contents Google Sheet.",
+	title='Available DocYoinker subcommands',
+	description="View and edit the Table of Contents Google Sheet and use features for chi Notes integration.",
 	dest='toc',
-	help="See 'toc -h' or 'toc --help' for subcommand arguments.")
+	help=f"See '{GREEN}toc -h{RESET}' or '{GREEN}toc --help{RESET}' for subcommand arguments."
+	f" There are two available subcommand groups: '{RED}[toc|tableofcontents, chi|chinotes]{RESET}'"
+)
 toc_args = toc_subcom.add_parser('toc', aliases=['tableofcontents'])
 toc_args.add_argument('-la', '--listall', action='store_true',
 	help="List a \'prettyformatted\' list of all Notebook series tables of contents")
@@ -55,6 +64,8 @@ toc_args.add_argument('-u', '--update', action='store_true',
 # toc_args= parser.add_argument_group('Table of Contents operations', '')
 # toc_args.add_argument('-t', '--toc', choices=docs_ids.OMEGA_IDS, nargs='+',
 # 	help='Load the Table of Contents of a specified Notebook series.')
+
+chi_args = toc_subcom.add_parser('chi', aliases=['chinotes'])
 
 parser.add_argument('--shut-up', action='store_true',
     help='Turn off verbose mode (on by default).')

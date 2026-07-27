@@ -49,12 +49,13 @@ Note 2: Remember to source your venv before trying to install shit from the term
 - [ ] The first hellish attempt at trying to convert everything to XML ~~or even HTML~~...
 - - **<❗>** ....but maybe converting the JSON data into a very decent XML format i can engineer is a better idea?
 ### (psi+chi) Notes era
-- [ ] Connect with Table of Contents; separate implementation!
-- [ ] Fetch and load ToC data.
+- [x] Connect with Table of Contents; separate implementation!
+- [x] Fetch and load ToC data.
 - [ ] Plug in chi Notes Bash scripts.
 - [ ] Put chi Notes page numbers statistics into ToC.
 - [ ] (**❗ONLY** when some initial GDoc export feat is done!!!) insert/"weave" omega Notes chapters/subchapters into chi Notes
 - - [ ] And then into psi Notes!
+#### chiNotes subcommands/features
 - [ ] Have a core template for testing (ala `main.tex`) and a Bash script that updates everything (mayhaps /w sed-diff-pipe tricks??) when something new is added to the doc format!
 #### TableOfContents subcommands
 - [ ] `listall` (`la`) print big pretty formatted list of ALL table of contents
