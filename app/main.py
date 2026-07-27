@@ -11,9 +11,8 @@ from googleapiclient.discovery import build
 
 import gdocs
 import oauth2 
-import parser
+import parser.parsercore as parser
 import tableofcontents as toc
-from parser import args
 import util.docs_ids as docs_ids
 import util.jsonsaver as jdsave
 import util.jsonloader as jdload
@@ -65,7 +64,7 @@ def main():
     #
     # Table of Contents & psi/chi Notes features
     #
-    if args.toc :
+    if hasattr(args, 'toc'):
         file = toc.get_toc(creds)
         sheets_service = build('sheets', 'v4', credentials=creds)
 

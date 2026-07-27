@@ -6,7 +6,7 @@ from PIL import Image
 
 import gdocs
 import util.jsonloader as jdload
-from parser import args
+from parser.parsercore import args
 import util.docs_ids as docs_ids
 import util.jsonsaver as jdsave
 import util.jsonloader as jdload
