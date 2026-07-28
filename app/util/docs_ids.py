@@ -45,5 +45,5 @@ def get_all_ntb_ids() -> dict[str, str]:
 
 
 NOTEBOOK_IDS = get_all_ntb_ids()
-SERIES_IDS = list(NTB_SERIES.keys())
 OMEGA_IDS = list(NOTEBOOK_IDS.keys())
+SERIES_IDS = list(NTB_SERIES.keys())

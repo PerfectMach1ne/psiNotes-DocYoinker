@@ -62,7 +62,3 @@ def refresh_from_template(omega_id: str):
 
     ntb_path.write_text(updated_latex, encoding='utf-8')
 
-
-
-    print(ntb_path)
-    print(series)

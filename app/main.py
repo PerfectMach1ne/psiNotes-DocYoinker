@@ -93,7 +93,6 @@ def main():
         
         elif args.subcommand == 'chi':
             refresh_from_template(args.refresh)
-            pass
 
 
     if args.test:
