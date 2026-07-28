@@ -11,12 +11,12 @@ from googleapiclient.discovery import build
 
 import gdocs
 import oauth2 
-import parser.parsercore as parser
 import tableofcontents as toc
 import util.docs_ids as docs_ids
 import util.jsonsaver as jdsave
 import util.jsonloader as jdload
 import getjdocs.posobj as get_po
+from parser.parsercore import args
 
 
 def main():

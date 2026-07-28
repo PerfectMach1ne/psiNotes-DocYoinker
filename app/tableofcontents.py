@@ -6,8 +6,7 @@
 from googleapiclient.discovery import build
 from googleapiclient.errors import HttpError
 
-import parser
-from parser import args
+from parser.parsercore import args
 
 
 TOC_ID = "15nSuKrllBI4PdawNSxqVGMqnc-CjYMN8A3c6kASYd9Y"

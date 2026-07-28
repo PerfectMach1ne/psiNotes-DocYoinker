@@ -7,8 +7,7 @@
 from googleapiclient.discovery import build
 from googleapiclient.errors import HttpError
 
-import parser.parsercore as parser
-from parser import args
+from parser.parsercore import args
 import util.docs_ids as docs_ids
 
 

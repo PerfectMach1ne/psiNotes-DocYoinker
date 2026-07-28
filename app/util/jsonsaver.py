@@ -7,7 +7,7 @@ import json
 from os import path
 
 import parser
-from parser import args
+from parser.parsercore import args
 
 
 YOINK_PATH = path.abspath('../yoinkstash')
