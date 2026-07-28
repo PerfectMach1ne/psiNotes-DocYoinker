@@ -9,6 +9,7 @@ import requests as req
 
 from googleapiclient.discovery import build
 
+from chi.chinotes import refresh_from_template
 import gdocs
 import oauth2 
 import tableofcontents as toc
@@ -64,29 +65,35 @@ def main():
     #
     # Table of Contents & psi/chi Notes features
     #
-    if hasattr(args, 'toc'):
-        file = toc.get_toc(creds)
-        sheets_service = build('sheets', 'v4', credentials=creds)
+    if hasattr(args, 'subcommand'):
+        print(args.subcommand)
+        if args.subcommand == 'toc':
+            file = toc.get_toc(creds)
+            sheets_service = build('sheets', 'v4', credentials=creds)
 
-        # Slop code to just test if it works:
-        spreadsheet_info = sheets_service.spreadsheets().get(
-            spreadsheetId=toc.TOC_ID
-        ).execute()
-        sheet_title = spreadsheet_info['sheets'][2]['properties']['title']
+            # Slop code to just test if it works:
+            spreadsheet_info = sheets_service.spreadsheets().get(
+                spreadsheetId=toc.TOC_ID
+            ).execute()
+            sheet_title = spreadsheet_info['sheets'][2]['properties']['title']
 
-        result = sheets_service.spreadsheets().values().get(
-            spreadsheetId=toc.TOC_ID,
-            range=sheet_title
-        ).execute()
+            result = sheets_service.spreadsheets().values().get(
+                spreadsheetId=toc.TOC_ID,
+                range=sheet_title
+            ).execute()
 
-        values = result.get('values', [])
+            values = result.get('values', [])
 
-        found = False
-        for row_id, row in enumerate(values):
-            for col_id, cell in enumerate(row):
-                if cell == "4.1.2.Empty set":
-                    print(f"woo woo woo '{sheet_title}' bwoo bwoo {row_id + 1}:{col_id + 1} found me a {cell}")
-                    found = True
+            found = False
+            for row_id, row in enumerate(values):
+                for col_id, cell in enumerate(row):
+                    if cell == "4.1.2.Empty set":
+                        print(f"woo woo woo '{sheet_title}' bwoo bwoo {row_id + 1}:{col_id + 1} found me a {cell}")
+                        found = True
+        
+        elif args.subcommand == 'chi':
+            refresh_from_template(args.refresh)
+            pass
 
 
     if args.test:

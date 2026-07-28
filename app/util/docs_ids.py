@@ -34,6 +34,7 @@ NTB_SERIES = {
 	"P": "Physics",
 }
 
+# NOTE: This IGNORES ALL notebooks that DON'T have a pre-existing omega Notes GDoc!!
 def get_all_ntb_ids() -> dict[str, str]:
     existing_ntb_ids = {
 		omega_id: gdoc_id for omega_id, gdoc_id

@@ -56,7 +56,8 @@ Note 2: Remember to source your venv before trying to install shit from the term
 - [ ] (**❗ONLY** when some initial GDoc export feat is done!!!) insert/"weave" omega Notes chapters/subchapters into chi Notes
 - - [ ] And then into psi Notes!
 #### chiNotes subcommands/features
-- [ ] Have a core template for testing (ala `main.tex`) and a Bash script that updates everything (mayhaps /w sed-diff-pipe tricks??) when something new is added to the doc format!
+- [x] Have a core template for testing (ala `main.tex`) and a Bash script that updates everything (mayhaps /w sed-diff-pipe tricks??) when something new is added to the doc format!
+- [ ] Refine the comment block from-template-file Notebook update system.
 #### TableOfContents subcommands
 - [ ] `listall` (`la`) print big pretty formatted list of ALL table of contents
 - [ ] `select <SERIES>` / `s` save a sheet ID to working memory file

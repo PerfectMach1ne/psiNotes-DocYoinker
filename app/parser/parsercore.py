@@ -33,14 +33,14 @@ get_args.add_argument('-p', '--posobj', choices=docs_ids.OMEGA_IDS, nargs='+',
 
 # subcommands = parser.add_subparsers(title='Subcommands')
 
-toc_subcom = parser.add_subparsers(
+subcom = parser.add_subparsers(
 	title='Available DocYoinker subcommands',
 	description="View and edit the Table of Contents Google Sheet and use features for chi Notes integration.",
-	dest='toc',
+	dest='subcommand',
 	help=f"See '{GREEN}toc -h{RESET}' or '{GREEN}toc --help{RESET}' for subcommand arguments."
 	f" There are two available subcommand groups: '{RED}[toc|tableofcontents, chi|chinotes]{RESET}'"
 )
-toc_args = toc_subcom.add_parser('toc', aliases=['tableofcontents'])
+toc_args = subcom.add_parser('toc', aliases=['tableofcontents'])
 toc_args.add_argument('-la', '--listall', action='store_true',
 	help="List a \'prettyformatted\' list of all Notebook series tables of contents")
 toc_args.add_argument('-s', '--select', choices=docs_ids.SERIES_IDS, nargs=1, default='0',
@@ -65,7 +65,10 @@ toc_args.add_argument('-u', '--update', action='store_true',
 # toc_args.add_argument('-t', '--toc', choices=docs_ids.OMEGA_IDS, nargs='+',
 # 	help='Load the Table of Contents of a specified Notebook series.')
 
-chi_args = toc_subcom.add_parser('chi', aliases=['chinotes'])
+# TODO: default should be a variable loaded from a data file!!
+chi_args = subcom.add_parser('chi', aliases=['chinotes'])
+chi_args.add_argument('--refresh', '-r', choices=docs_ids.OMEGA_IDS, default='0',
+	help="Refresh the core structure of a selected chi Notes notebook from the `main.tex` template.")
 
 parser.add_argument('--shut-up', action='store_true',
     help='Turn off verbose mode (on by default).')
