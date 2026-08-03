@@ -31,7 +31,9 @@ Note: if something doesn't work, try moving stuff around, running commands from 
 Note 2: Remember to source your venv before trying to install shit from the terminal. It's a cheap and easy trip-up.
 
 ## The "master plan pipeline"
+
 ### Original project scope
+
 - [x] ~~Put the GDoc Document object's JSON in a `.json`.~~ 
 - [ ] Option to check what docs are downloaded to not waste bandwith. (and also compare revisionId to see if there were any changes.)
 - [ ] Save doc metadata somewhere.
@@ -48,17 +50,26 @@ Note 2: Remember to source your venv before trying to install shit from the term
 - **<❗>** Everything stores its position!
 - [ ] The first hellish attempt at trying to convert everything to XML ~~or even HTML~~...
 - - **<❗>** ....but maybe converting the JSON data into a very decent XML format i can engineer is a better idea?
+
 ### (psi+chi) Notes era
+
 - [x] Connect with Table of Contents; separate implementation!
 - [x] Fetch and load ToC data.
-- [ ] Plug in chi Notes Bash scripts.
+- [ ] Plug in chi Notes Bash scripts. (if it's worth it)
 - [ ] Put chi Notes page numbers statistics into ToC.
 - [ ] (**❗ONLY** when some initial GDoc export feat is done!!!) insert/"weave" omega Notes chapters/subchapters into chi Notes
 - - [ ] And then into psi Notes!
+- [ ] `select <SERIES>` / `s` ‼️**IMPORTANT**‼️ A general Ntb. selection system!!
+
 #### chiNotes subcommands/features
+
 - [x] Have a core template for testing (ala `main.tex`) and a Bash script that updates everything (mayhaps /w sed-diff-pipe tricks??) when something new is added to the doc format!
-- [ ] Refine the comment block from-template-file Notebook update system.
+- [ ] Comment block from-template-file Notebook identification.
+- [ ] `select <SERIES>` / `s` save a document ID to working memory file
+- [ ] As above, select notebook updating.
+
 #### TableOfContents subcommands
+
 - [ ] `listall` (`la`) print big pretty formatted list of ALL table of contents
 - [ ] `select <SERIES>` / `s` save a sheet ID to working memory file
 - [ ] `list [SERIES]` / `l` list (prettystyle) table of contents of the selected sheet
@@ -67,5 +78,7 @@ Note 2: Remember to source your venv before trying to install shit from the term
 - [ ] `insert <section_number> [name]` / `i`
 - [ ] `delete` / `d` as above
 - [ ] `update` / `u` as above
+
 ### 1-image project explanation
+
 ![A meme](me_irl.png)
